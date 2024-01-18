@@ -25,9 +25,9 @@ public class DriveSubsystem extends SubsystemBase {
   // private static final int kEncoderResolution = 4096;
   /** Creates a new DriveTrain. */
   private final MotorController m_leftFront = new WPI_TalonSRX(RobotMap.m_leftFrontPort);
-  private final MotorController m_rightFront = new WPI_TalonSRX(RobotMap.m_rightFront);
-  private final MotorController m_leftBack = new WPI_TalonSRX(RobotMap.m_leftBack);
-  private final MotorController m_rightBack = new WPI_TalonSRX(RobotMap.m_rightBack);
+  private final MotorController m_rightFront = new WPI_TalonSRX(RobotMap.m_rightFrontPort);
+  private final MotorController m_leftBack = new WPI_TalonSRX(RobotMap.m_leftBackPort);
+  private final MotorController m_rightBack = new WPI_TalonSRX(RobotMap.m_rightBackPort);
 
   private final MotorControllerGroup m_leftGroup = new MotorControllerGroup(m_leftFront, m_leftBack);
   private final MotorControllerGroup m_rightGroup = new MotorControllerGroup(m_rightFront, m_rightBack);
