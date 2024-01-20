@@ -9,12 +9,12 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class IntakeSubsystem extends SubsystemBase {
   /** Creates a new IntakeSubsystem. */
 
-  private final MotorController m_leftIntake = new WPI_TalonSRX(5);
-  private final MotorController m_rightIntake = new WPI_TalonSRX(6);
+  private final MotorController m_leftIntake = new WPI_TalonSRX(RobotMap.m_leftIntakePort);
+  private final MotorController m_rightIntake = new WPI_TalonSRX(RobotMap.m_rightIntakePort);
   private final MotorControllerGroup m_intakeGroup = new MotorControllerGroup(m_leftIntake, m_rightIntake);
 
   public IntakeSubsystem() {
-    m_leftIntake.setInverted(true);
+    m_leftIntake.setInverted(false);
     m_rightIntake.setInverted(true);
   }
 

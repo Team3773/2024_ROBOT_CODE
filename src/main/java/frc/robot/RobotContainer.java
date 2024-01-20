@@ -5,6 +5,7 @@
 package frc.robot;
 
 import edu.wpi.first.wpilibj.XboxController;
+import edu.wpi.first.wpilibj2.command.Command;
 import frc.robot.commands.NoteIntakeCommand;
 import frc.robot.commands.TeleopDrive;
 import frc.robot.subsystems.DriveSubsystem;
@@ -36,5 +37,8 @@ public class RobotContainer {
                 m_feeder,
                 () -> controller2.getLeftBumper(),
                 () -> controller2.getRightBumper()));
+    }
+    public Command getAutonomousCommand() {
+        return null;
     };
 }
