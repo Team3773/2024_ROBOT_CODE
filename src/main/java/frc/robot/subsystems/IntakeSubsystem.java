@@ -9,13 +9,11 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class IntakeSubsystem extends SubsystemBase {
   /** Creates a new IntakeSubsystem. */
 
-  private final MotorController m_leftIntake = new WPI_TalonSRX(RobotMap.m_leftIntakePort);
-  private final MotorController m_rightIntake = new WPI_TalonSRX(RobotMap.m_rightIntakePort);
-  private final MotorControllerGroup m_intakeGroup = new MotorControllerGroup(m_leftIntake, m_rightIntake);
-
+  private final MotorController m_armMotor = new WPI_TalonSRX(RobotMap.m_armMotorPort);
+  
+  
   public IntakeSubsystem() {
-    m_leftIntake.setInverted(false);
-    m_rightIntake.setInverted(true);
+    m_armMotor.setInverted(false);
   }
 
   @Override
@@ -25,13 +23,13 @@ public class IntakeSubsystem extends SubsystemBase {
 
   public void runIntake(double speed) {
     System.out.println("Intake speed:" + speed);
-    m_intakeGroup.set(speed);
+    m_armMotor.set(speed);
   }
 
   public void stopIntake() {
     var speed = 0;
     System.out.println("Intake speed:" + speed);
-    m_intakeGroup.set(speed);
+    m_armMotor.set(speed);
   }
 
 }
